@@ -23,14 +23,13 @@ backend formatter.
     import Control.Monad.Logger.Truncated (runTruncatedLoggingT)
 
     main :: IO ()
-    main =
-	  let fmt = mkLogFmt (Just 100) Nothing
-	  in  runSyslogLoggingT (logDebugN "HELLO!")
+    main = let fmt = mkLogFmt (Just 100) Nothing
+	       in  runTruncatedLoggingT (logDebugN "HELLO!")
 
 
 `monad-logger-truncated` can use existing `monad-logger` backends:
 
     import Control.Monad.Logger.Syslog (defaultSyslogOutput)
-    main =
-	  let fmt = mkLogFmt (Just 100) (Just defaultSyslogOutput)
-	  in  runTruncatedLoggingT fmt (logDebugN "HELLO!")
+
+    main = let fmt = mkLogFmt (Just 100) (Just defaultSyslogOutput)
+	       in  runTruncatedLoggingT fmt (logDebugN "HELLO!")
