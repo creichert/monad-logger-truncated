@@ -13,7 +13,7 @@ This usage description is the planned implementation. Currently, a
 moderately inneficient implementation is used due to converting the
 log string back and forth before concatenating the source info
 
-    tst = runTruncatedLoggingT (mkLogFmt (Just 10)) (logDebugN "Hello, world")
+    > runTruncatedLoggingT (mkLogFmt (Just 10)) (logDebugN "Hello, world")
     [Debug] Hello,... @(monad-logger-truncated-0.1.0.0:System.Log.MonadLogger.Truncated /path/to/monad-logger-truncated/System/Log/MonadLogger/Truncated.hs:26:52)
 
 The ideal use-case is to conditionally truncate logging with any
