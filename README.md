@@ -11,7 +11,7 @@ verbose logging output.
 
 This usage description is the planned implementation. Currently, a
 moderately inneficient implementation is used due to converting the
-log string back and forth before concatenating the source info
+log string back and forth before appending the source annotations:
 
     > runTruncatedLoggingT (mkLogFmt (Just 10)) (logDebugN "Hello, world")
     [Debug] Hello,... @(monad-logger-truncated-0.1.0.0:System.Log.MonadLogger.Truncated /path/to/monad-logger-truncated/System/Log/MonadLogger/Truncated.hs:26:52)
