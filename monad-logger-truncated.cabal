@@ -1,0 +1,28 @@
+name:                monad-logger-truncated
+version:             0.1.0.0
+synopsis:            monad-logger backend designed to handle potentially verbose output
+description:         monad-logger backend designed to handle potentially verbose output
+homepage:            https://github.com/creichert/monad-logger-truncated
+license:             MIT
+license-file:        LICENSE
+author:              Christopher Reichert
+maintainer:          creichert07@gmail.com
+category:            Logging
+build-type:          Simple
+extra-source-files:  README.md
+cabal-version:       >=1.10
+
+source-repository head
+  type:     git
+  location: https://github.com/creichert/monad-logger-truncated
+
+library
+  default-language:    Haskell2010
+  exposed-modules:     Control.Monad.Logger.Truncated
+                       System.Log.MonadLogger.Truncated
+  ghc-options:        -Wall
+  build-depends:       base == 4.*
+                     , bytestring
+                     , fast-logger
+                     , monad-logger
+                     , transformers

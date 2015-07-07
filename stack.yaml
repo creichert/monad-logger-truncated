@@ -1,0 +1,6 @@
+flags:
+  monad-logger-truncated: {}
+packages:
+  - '.'
+extra-deps: []
+resolver: lts-2.12
